@@ -52,7 +52,7 @@
 
 |Column          | Type       | Options                        |
 | -------------- | ---------- | ------------------------------ |
-| postalcode     | integer    | null: false                    |
+| postalcode     | string    | null: false                    |
 | prefecture     | string     | null: false                    |
 | city           | string     | null: false                    |
 | address        | string     | null: false                    |
