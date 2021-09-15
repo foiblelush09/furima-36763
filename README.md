@@ -15,7 +15,6 @@
 
 - has_many :items
 - has_many :buys
-- has_many :ships
 
 ## itemsテーブル
 
