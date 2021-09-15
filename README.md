@@ -57,7 +57,7 @@
 | city           | string     | null: false                    |
 | address        | string     | null: false                    |
 | building_name  | string     |                                |
-| phonenumber    | integer    | null: false                    |
+| phonenumber    | string     | null: false                    |
 | seller_user_id | references | null: false, foreign_key: true |
 
 ### Association
