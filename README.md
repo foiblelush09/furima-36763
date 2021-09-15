@@ -28,7 +28,7 @@
 | source          | integer    | null: false                    |
 | days_to_ship    | integer    | null: false                    |
 | price           | integer    | null: false                    |
-| seller_user_id  | references | null: false, foreign_key: true |
+| user            | references | null: false, foreign_key: true |
 
 ### Association
 
