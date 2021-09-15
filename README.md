@@ -52,8 +52,8 @@
 
 |Column          | Type       | Options                        |
 | -------------- | ---------- | ------------------------------ |
-| postalcode     | string    | null: false                    |
-| prefecture     | string     | null: false                    |
+| postalcode     | string     | null: false                    |
+| prefecture     | integer    | null: false                    |
 | city           | string     | null: false                    |
 | address        | string     | null: false                    |
 | building_name  | string     |                                |
