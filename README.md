@@ -22,11 +22,11 @@
 | --------------- | ---------- | ------------------------------ |
 | title           | string     | null: false                    |
 | description     | text       | null: false                    |
-| category        | string     | null: false                    |
-| condition       | string     | null: false                    |
-| shipping_charge | string     | null: false                    |
-| source          | string     | null: false                    |
-| days_to_ship    | string     | null: false                    |
+| category        | integer    | null: false                    |
+| condition       | integer    | null: false                    |
+| shipping_charge | integer    | null: false                    |
+| source          | integer    | null: false                    |
+| days_to_ship    | integer    | null: false                    |
 | price           | integer    | null: false                    |
 | seller_user_id  | references | null: false, foreign_key: true |
 
