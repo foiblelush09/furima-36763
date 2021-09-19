@@ -116,7 +116,7 @@ RSpec.describe User, type: :model do
       it 'last_name_kanaが全角(カタカナ)でなければ登録できない' do
         @user.last_name_kana = 'かな'
         @user.valid?
-        expect(@user.errors.full_messages).to include('Last name kana is invalid.Input full-width katakana characters')
+        expect(@user.errors.full_messages).to include('Last name kana is invalid. Input full-width katakana characters')
       end
 
       it 'first_name_kanaが全角(カタカナ)でなければ登録できない' do
