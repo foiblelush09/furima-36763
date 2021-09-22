@@ -32,31 +32,31 @@ RSpec.describe Item, type: :model do
       end
 
       it 'category_idが---だと出品できない' do
-        @item.category_id = '1'
+        @item.category_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include("Category can't be blank")
       end
 
       it 'condition_idが---だと出品できない' do
-        @item.condition_id = '1'
+        @item.condition_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include("Condition can't be blank")
       end
 
       it 'shipping_charge_idが---だと出品できない' do
-        @item.shipping_charge_id = '1'
+        @item.shipping_charge_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include("Shipping charge can't be blank")
       end
 
       it 'prefecture_idが---だと出品できない' do
-        @item.prefecture_id = '1'
+        @item.prefecture_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include("Prefecture can't be blank")
       end
 
       it 'days_to_ship_idが---だと出品できない' do
-        @item.days_to_ship_id = '1'
+        @item.days_to_ship_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include("Days to ship can't be blank")
       end

@@ -1,6 +1,5 @@
 FactoryBot.define do
   factory :item do
-    image { Faker::Lorem.sentence }
     title { 'タイトル' }
     description { '説明' }
     category_id { 2 }
