@@ -15,7 +15,7 @@ class Item < ApplicationRecord
     validates :description
   end
 
-  with_options numericality: { other_than: 1 , message: "can't be blank"} do
+  with_options numericality: { other_than: 1, message: "can't be blank" } do
     validates :category_id
     validates :condition_id
     validates :shipping_charge_id
@@ -23,7 +23,6 @@ class Item < ApplicationRecord
     validates :days_to_ship_id
   end
 
-  validates :price, presence: true, numericality: { with: /\A[0-9]+\z/, message: "is invalid. Input half-width characters"}
-  validates_inclusion_of :price, {in: 300..9_999_999, message:"is out of setting range"}
+  validates :price, presence: true, numericality: { with: /\A[0-9]+\z/, message: 'is invalid. Input half-width characters' }
+  validates_inclusion_of :price, { in: 300..9_999_999, message: 'is out of setting range' }
 end
-

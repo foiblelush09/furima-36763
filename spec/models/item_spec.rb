@@ -70,19 +70,19 @@ RSpec.describe Item, type: :model do
       it 'priceが¥300未満だと出品できない' do
         @item.price = 299
         @item.valid?
-        expect(@item.errors.full_messages).to include("Price is out of setting range")
+        expect(@item.errors.full_messages).to include('Price is out of setting range')
       end
 
       it 'priceが¥9999999より大きいと出品できない' do
-        @item.price = 10000000
+        @item.price = 10_000_000
         @item.valid?
-        expect(@item.errors.full_messages).to include("Price is out of setting range")
+        expect(@item.errors.full_messages).to include('Price is out of setting range')
       end
 
       it 'priceは半角数値でないと出品できない' do
         @item.price = '全角'
         @item.valid?
-        expect(@item.errors.full_messages).to include("Price is invalid. Input half-width characters")
+        expect(@item.errors.full_messages).to include('Price is invalid. Input half-width characters')
       end
     end
   end
