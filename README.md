@@ -33,7 +33,7 @@
 ### Association
 
 - belongs_to :user
-- has_one :buy
+- has_one :order
 
 ## ordersテーブル
 
@@ -62,4 +62,4 @@
 
 ### Association
 
-- belongs_to :buy
+- belongs_to :order
