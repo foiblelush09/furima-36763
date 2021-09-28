@@ -10,7 +10,7 @@ RSpec.describe OrderShip, type: :model do
 
   describe '商品購入情報入力' do
     context '購入情報が登録できる場合' do
-      it 'postalcode,prefecture_id,city,address,phonenumberがあれば登録できる' do
+      it 'postalcode,prefecture_id,city,address,phonenumber,tokenがあれば登録できる' do
         expect(@order_ship).to be_valid
       end
     end
@@ -56,6 +56,12 @@ RSpec.describe OrderShip, type: :model do
         @order_ship.phonenumber = '０００００００００００'
         @order_ship.valid?
         expect(@order_ship.errors.full_messages).to include("Phonenumber input only number")
+      end
+
+      it 'token が空だと登録できない' do
+        @order_ship.token = nil
+        @order_ship.valid?
+        expect(@order_ship.errors.full_messages).to include("Token can't be blank")
       end
     end
   end
