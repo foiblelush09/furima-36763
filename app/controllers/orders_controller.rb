@@ -1,11 +1,12 @@
 class OrdersController < ApplicationController
+  before_action :authenticate_user!, only: :index
   def index
     @order_ship = OrderShip.new
     @item = Item.find(params[:item_id])
     if @item.order.present?
       redirect_to root_path
     end
-    if user_signed_in?
+    if current_user == @item.user
       redirect_to root_path
     end
   end
