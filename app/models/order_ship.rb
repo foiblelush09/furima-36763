@@ -6,6 +6,7 @@ class OrderShip
     validates :postalcode, format: {with: /\A[0-9]{3}-[0-9]{4}\z/, message: "is invalid. Include hyphen(-)"}
     validates :city, :address, :user_id, :item_id
     validates :phonenumber, format: {with: /\A[0-9]+\z/, message: "input only number"}
+    validates :phonenumber, format: {with: /\A\d{10,11}\z/}
     validates :token
   end
 

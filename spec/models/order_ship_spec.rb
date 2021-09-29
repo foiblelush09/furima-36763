@@ -13,6 +13,10 @@ RSpec.describe OrderShip, type: :model do
       it 'postalcode,prefecture_id,city,address,phonenumber,tokenがあれば登録できる' do
         expect(@order_ship).to be_valid
       end
+
+      it 'building_nameが空でも登録できる' do
+        expect(@order_ship).to be_valid
+      end
     end
 
     context '購入情報が登録できない場合' do
@@ -52,6 +56,18 @@ RSpec.describe OrderShip, type: :model do
         expect(@order_ship.errors.full_messages).to include("Phonenumber can't be blank")
       end
 
+      it 'phonenumberが９桁以下だと登録できない' do
+        @order_ship.phonenumber = '000000000'
+        @order_ship.valid?
+        expect(@order_ship.errors.full_messages).to include("Phonenumber is invalid")
+      end
+
+      it 'phonenumberが12桁以上だと登録でいない' do
+        @order_ship.phonenumber = '000000000000'
+        @order_ship.valid?
+        expect(@order_ship.errors.full_messages).to include("Phonenumber is invalid")
+      end
+
       it 'phonenumberが半角数値でないと登録できない' do
         @order_ship.phonenumber = '０００００００００００'
         @order_ship.valid?
@@ -62,6 +78,18 @@ RSpec.describe OrderShip, type: :model do
         @order_ship.token = nil
         @order_ship.valid?
         expect(@order_ship.errors.full_messages).to include("Token can't be blank")
+      end
+
+      it 'user_idが空だと登録できない' do
+        @order_ship.user_id = nil
+        @order_ship.valid?
+        expect(@order_ship.errors.full_messages).to include("User can't be blank")
+      end
+
+      it 'item_idが空だと登録できない' do
+        @order_ship.item_id = nil
+        @order_ship.valid?
+        expect(@order_ship.errors.full_messages).to include("Item can't be blank")
       end
     end
   end
