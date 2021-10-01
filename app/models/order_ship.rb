@@ -5,13 +5,12 @@ class OrderShip
   with_options presence: true do
     validates :postalcode, format: {with: /\A[0-9]{3}-[0-9]{4}\z/, message: "is invalid. Include hyphen(-)"}
     validates :city, :address, :user_id, :item_id
-    validates :phonenumber, format: {with: /\A[0-9]+\z/, message: "input only number"}
-    validates :phonenumber, format: {with: /\A\d{10,11}\z/}
     validates :token
   end
 
   validates :prefecture_id, numericality: {other_than: 1, message: "can't be blank"}
-
+  validates :phonenumber,  presence: true, format: {with: /\A[0-9]+\z/, message: "input only number"}
+  validates :phonenumber, format: {with: /\A\d{10,11}\z/, message: "is too short"}
   def save
     order = Order.create(user_id: user_id, item_id: item_id)
     

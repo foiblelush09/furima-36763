@@ -60,7 +60,7 @@ RSpec.describe OrderShip, type: :model do
       it 'phonenumberが９桁以下だと登録できない' do
         @order_ship.phonenumber = '000000000'
         @order_ship.valid?
-        expect(@order_ship.errors.full_messages).to include("Phonenumber is invalid")
+        expect(@order_ship.errors.full_messages).to include("Phonenumber is too short")
       end
 
       it 'phonenumberが12桁以上だと登録でいない' do
